@@ -85,47 +85,6 @@ public class Encryptor
         return encrypted;
     }
 
-    public static void main(String[] args) 
-    {
-
-        System.out.println(decryptMessage(encryptMessage("Hello, how are you?", 6), 6));
-        // String[][] arr1 = generateEncryptArray(encryptMessage("Hello, how are you?", 4), 4);
-
-        // String[][] arr1 = generateEncryptArray(decryptMessage(encryptMessage("Hello, how are you?", 6), 6), 6);
-        // for (String[] row : arr1)
-        // {
-        //     for (String c : row)
-        //     {
-        //         System.out.print(c + " ");
-        //     }
-        //     System.out.println();
-        // }
-
-        // System.out.println();
-
-        // String[][] arr2 = generateEncryptArray("Hello, how are you?", 3);
-        // for (String[] row : arr2)
-        // {
-        //     for (String c : row)
-        //     {
-        //         System.out.print(c + " ");
-        //     }
-        //     System.out.println();
-        // }
-
-        // System.out.println();
-
-        // String[][] arr3 = generateEncryptArray("Hello, how are you?", 6);
-        // for (String[] row : arr3)
-        // {
-        //     for (String c : row)
-        //     {
-        //         System.out.print(c + " ");
-        //     }
-        //     System.out.println();
-        // }
-    }
-
     public static String decryptMessage(String encryptedMessage, int rows) 
     {
         int cols = determineColumns(encryptedMessage.length(), rows);
@@ -154,5 +113,10 @@ public class Encryptor
             }
         }
         return decrypted;
+    }
+
+    public static void main(String[] args) 
+    {
+        System.out.println(decryptMessage("  t=wsf=owa?no tkldn leauamlomapyhn  s adre iarrDmae", 4));        
     }
 }
