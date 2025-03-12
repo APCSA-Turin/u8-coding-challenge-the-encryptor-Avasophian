@@ -128,21 +128,27 @@ public class Encryptor
 
     public static String decryptMessage(String encryptedMessage, int rows) 
     {
-        int columns = determineColumns(encryptedMessage.length(), rows);
-        String[][] decryptedArr = new String[rows][columns];
+        int cols = determineColumns(encryptedMessage.length(), rows);
+        String[][] decryptedArr = new String[rows][cols];
         int c = 0;
-        for (int col = columns - 1; col >= 0; col--) {
-            for (int row = 0; row < rows; row++) {
-                if (c < encryptedMessage.length()) {
+        for (int col = cols - 1; col >= 0; col--) 
+        {
+            for (int row = 0; row < rows; row++) 
+            {
+                if (c < encryptedMessage.length()) 
+                {
                     decryptedArr[row][col] = encryptedMessage.substring(c, c + 1);
                     c++;
                 }
             }
         }
         String decrypted = "";
-        for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < columns; col++) {
-                if (decryptedArr[row][col] != null && !decryptedArr[row][col].equals("=")) {
+        for (int row = 0; row < rows; row++) 
+        {
+            for (int col = 0; col < cols; col++)
+             {
+                if (decryptedArr[row][col] != null && !decryptedArr[row][col].equals("=")) 
+                {
                     decrypted += decryptedArr[row][col];
                 }
             }
